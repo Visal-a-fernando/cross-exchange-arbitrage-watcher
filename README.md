@@ -1,4 +1,4 @@
-# Watcher Bot — Phase 1 (Read Only)
+# Watcher Bot - Phase 1 (Read Only)
 
 Async Python arbitrage watcher for Binance ↔ Bybit spot & perpetual markets.  
 **No trade execution. Strictly observation and alerting.**
@@ -9,7 +9,7 @@ Async Python arbitrage watcher for Binance ↔ Bybit spot & perpetual markets.
 
 | Capital | Target | Fee edge |
 |---|---|---|
-| $2,000 ($1k each exchange) | $200/month (10% ROI) | Binance "United Stables (U)" promo: BTC/U and ETH/U at **0.00% fee** (Apr–Jul 2026) |
+| $2,000 ($1k each exchange) | $200/month (10% ROI) | Binance "United Stables (U)" promo: BTC/U and ETH/U at **0.00% fee** (Apr - Jul 2026) |
 
 **Profit threshold:** A 0.15% net spread on a $1,000 leg yields ≈$1.50 profit after fees.
 
@@ -63,11 +63,11 @@ pip install -r requirements.txt
 
 ```bash
 cp .env.example .env
-# API keys are OPTIONAL — public WebSocket works without them
+# API keys are OPTIONAL - public WebSocket works without them
 # Fill in TELEGRAM_BOT_TOKEN + TELEGRAM_CHAT_ID for Phase 2 alerts
 ```
 
-### 3. Run (Perth — DEBUG mode)
+### 3. Run (Perth - DEBUG mode)
 
 ```bash
 python main.py
@@ -110,13 +110,13 @@ spread=0.04100% | est. APR≈44.9%
 
 **Latency Spike (YELLOW):**
 ```
-[LATENCY SPIKE] BTC-USD | Δt=1243ms > threshold=1000ms — skipping tick
+[LATENCY SPIKE] BTC-USD | Δt=1243ms > threshold=1000ms - skipping tick
 ```
 
 **Dashboard (every 60s):**
 ```
 ╔═════════════════════════════════════════════════════╗
-║            WATCHER BOT — STATUS DASHBOARD           ║
+║            WATCHER BOT - STATUS DASHBOARD           ║
 ╚═════════════════════════════════════════════════════╝
   TIME  2026-04-17 14:32:01 UTC
   ──────────────────────────────────────────────────────
@@ -143,7 +143,7 @@ spread=0.04100% | est. APR≈44.9%
 
 ```ini
 [Unit]
-Description=Watcher Bot — Crypto Arb Monitor
+Description=Watcher Bot - Crypto Arb Monitor
 After=network-online.target
 Wants=network-online.target
 
@@ -174,7 +174,7 @@ sudo journalctl -u watcher -f    # tail logs
 - [ ] Pull live balances from exchange REST APIs
 - [ ] Add z-score filter on funding spreads (rolling 24h window via pandas)
 - [ ] Add ETH gas spike guard for cross-chain arb paths
-- [ ] Build execution engine (Phase 2 — separate repo)
+- [ ] Build execution engine (Phase 2 - separate repo)
 
 ---
 
